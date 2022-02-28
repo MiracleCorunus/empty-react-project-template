@@ -1,10 +1,10 @@
-import React, {useReducer} from "react";
+import React, { useReducer } from "react";
 import ThemeContext from './ThemeContext';
 import ThemeReducer from './ThemeReducer';
-import {CHANGE_THEME} from '../types'
+import { CHANGE_THEME } from '../types'
 
 
-const  ThemeState = props => {
+const ThemeState = props => {
 
     const getThemeStateFromLocalStorage = () => {
         let state = JSON.parse(localStorage.getItem('theme'));
@@ -17,9 +17,9 @@ const  ThemeState = props => {
                 return false
             }
         } else {
-            if (state){
+            if (state) {
                 document.body.style = 'background: #F0F0F0;';
-            } else if (!state){
+            } else if (!state) {
                 document.body.style = 'background: #303030;';
             }
             return state
@@ -33,9 +33,9 @@ const  ThemeState = props => {
         if (state === null) {
             document.body.style = 'background: #F0F0F0;';
         } else {
-            if (state){
+            if (state) {
                 document.body.style = 'background: #303030;';
-            } else if (!state){
+            } else if (!state) {
                 document.body.style = 'background: #F0F0F0;';
             }
         }
